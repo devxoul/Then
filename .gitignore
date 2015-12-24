@@ -3,7 +3,6 @@
 build
 
 **/xcuserdata
-**/xcshareddata
 *.pbxuser
 *.mode1v3
 
