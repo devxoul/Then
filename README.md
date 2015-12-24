@@ -11,7 +11,7 @@ Then
 At a Glance
 -----------
 
-Initialize UILabel **then** setting its properties.
+Initialize UILabel **then** set its properties.
 
 ```swift
 let label = UILabel().then {
@@ -33,15 +33,21 @@ let label: UILabel = {
 }()
 ```
 
-#### Not prefer using `$0`?
-
-Give it a name. (e.g. `this`)
+You can use `then()` to all of `NSObject` subclasses.
 
 ```swift
-let label = UILabel().then { this in
-    this.textAlignment = .Center
-    this.textColor = .blackColor()
-    this.text = "Hello, World!"
+let queue = NSOperationQueue().then {
+    $0.maxConcurrentOperationCount = 1
+}
+```
+
+Want to use with your own classes? Just make extensions.
+
+```swift
+extension MyClass: Then {}
+
+let instance = MyClass().then {
+    $0.really = "awesome!"
 }
 ```
 
@@ -49,7 +55,7 @@ let label = UILabel().then { this in
 Real World Example
 ------------------
 
-Exmaple usage in an UIViewController subclass.
+Here's an exmaple usage in an UIViewController subclass.
 
 ```swift
 final class MyViewController: UIViewController {
