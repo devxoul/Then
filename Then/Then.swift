@@ -22,7 +22,7 @@
 
 import Foundation
 
-protocol Then {}
+public protocol Then {}
 extension Then {
 
     /// Makes it available to set properties with closures just after initializing.
