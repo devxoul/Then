@@ -32,7 +32,7 @@ extension Then {
     ///         $0.textColor = UIColor.blackColor()
     ///         $0.text = "Hello, World!"
     ///     }
-    func then(block: Self -> Void) -> Self {
+    func then(@noescape block: Self -> Void) -> Self {
         block(self)
         return self
     }
