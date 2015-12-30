@@ -4,6 +4,7 @@ Then
 ![Swift](https://img.shields.io/badge/Swift-2.1-orange.svg)
 [![Build Status](https://travis-ci.org/devxoul/Then.svg)](https://travis-ci.org/devxoul/Then)
 [![CocoaPods](http://img.shields.io/cocoapods/v/Then.svg)](https://cocoapods.org/pods/Then)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ✨ Super sweet syntactic sugar for Swift initializers.
 
@@ -96,7 +97,11 @@ Installation
     ```ruby
     github 'devxoul/Then', '0.1.0', :files => 'Then/Then.swift'
     ```
+- Use [Carthage](https://github.com/Carthage/Carthage) with Cartfile:
 
+    ```
+    github "devxoul/Then"
+    ```
 
 License
 -------
