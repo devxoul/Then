@@ -17,6 +17,7 @@ class ThenTests: XCTestCase {
             $0.textColor = .blackColor()
         }
         XCTAssertEqual(label.text, "I am a label.")
+        XCTAssertEqual(label.textColor, UIColor.blackColor())
     }
     
 }
