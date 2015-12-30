@@ -24,7 +24,7 @@ import Foundation
 
 public protocol Then {}
 extension Then {
-
+    
     /// Makes it available to set properties with closures just after initializing.
     ///
     ///     let label = UILabel().then {
@@ -40,3 +40,16 @@ extension Then {
 }
 
 extension NSObject: Then {}
+
+infix operator => { associativity left precedence 200 }
+
+///  An operator syntax for the .then { } notation
+///
+///    let label = UILabel() => {
+///         $0.textAlignment = .Center
+///         $0.textColor = UIColor.blackColor()
+///         $0.text = "Hello, World!"
+///     }
+func => <T:Then>(lhs: T, rhs: ((T) -> ())) -> T {
+    return lhs.then(rhs)
+}
