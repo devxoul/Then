@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Then"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "Super sweet syntactic sugar for Swift initializers."
   s.homepage         = "https://github.com/devxoul/Then"
   s.license          = { :type => "MIT", :file => "LICENSE" }
