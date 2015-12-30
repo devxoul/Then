@@ -87,14 +87,14 @@ Installation
 - **For iOS 8+ projects:** Use [CocoaPods](https://cocoapods.org) with Podfile:
 
     ```ruby
-    pod 'Then', '~> 0.1'
+    pod 'Then', '~> 0.2'
     ```
 
 
 - **For iOS 7 projects:** Use [CocoaSeeds](https://github.com/devxoul/CocoaSeeds) with Seedfile:
 
     ```ruby
-    github 'devxoul/Then', '0.1.0', :files => 'Then/Then.swift'
+    github 'devxoul/Then', '0.2.0', :files => 'Then/Then.swift'
     ```
 
 
