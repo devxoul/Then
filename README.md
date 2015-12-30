@@ -88,19 +88,19 @@ Installation
 - **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
-    pod 'Then', '~> 0.2'
+    pod 'Then', '~> 0.3'
     ```
     
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
-    github "devxoul/Then" ~> 0.2
+    github "devxoul/Then" ~> 0.3
     ```
 
 - **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
 
     ```ruby
-    github 'devxoul/Then', '0.2.0', :files => 'Then/Then.swift'
+    github 'devxoul/Then', '0.3.0', :files => 'Sources/*.swift'
     ```
     
 - **Using [Swift Package Manager](https://swift.org/package-manager)**:
@@ -111,7 +111,7 @@ Installation
     let package = Package(
         name: "MyAwesomeApp",
         dependencies: [
-            .Package(url: "https://github.com/devxoul/Then", "0.2.0"),
+            .Package(url: "https://github.com/devxoul/Then", "0.3.0"),
         ]
     )
     ```
