@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0340E59D1C2BE4F400020202 /* Then.h in Headers */ = {isa = PBXBuildFile; fileRef = 0340E59C1C2BE4F400020202 /* Then.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		033909F91C344E6700EDFB89 /* Then.h in Headers */ = {isa = PBXBuildFile; fileRef = 033909F71C344E6700EDFB89 /* Then.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		033909FA1C344E6700EDFB89 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033909F81C344E6700EDFB89 /* Then.swift */; };
 		0340E5A41C2BE4F400020202 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0340E5991C2BE4F400020202 /* Then.framework */; };
 		0340E5A91C2BE4F400020202 /* ThenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340E5A81C2BE4F400020202 /* ThenTests.swift */; };
-		0340E5B41C2BE5E200020202 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340E5B31C2BE5E200020202 /* Then.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,13 +24,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033909F51C344E4200EDFB89 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Support/Info.plist; sourceTree = SOURCE_ROOT; };
+		033909F71C344E6700EDFB89 /* Then.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Then.h; sourceTree = "<group>"; };
+		033909F81C344E6700EDFB89 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		0340E5991C2BE4F400020202 /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0340E59C1C2BE4F400020202 /* Then.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Then.h; sourceTree = "<group>"; };
-		0340E59E1C2BE4F400020202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0340E5A31C2BE4F400020202 /* ThenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0340E5A81C2BE4F400020202 /* ThenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThenTests.swift; sourceTree = "<group>"; };
 		0340E5AA1C2BE4F400020202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0340E5B31C2BE5E200020202 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +52,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		033909F01C344DA400EDFB89 /* Then */ = {
+			isa = PBXGroup;
+			children = (
+				033909F71C344E6700EDFB89 /* Then.h */,
+				033909F81C344E6700EDFB89 /* Then.swift */,
+				033909F51C344E4200EDFB89 /* Info.plist */,
+			);
+			name = Then;
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		0340E58F1C2BE4F400020202 = {
 			isa = PBXGroup;
 			children = (
-				0340E59B1C2BE4F400020202 /* Then */,
+				033909F01C344DA400EDFB89 /* Then */,
 				0340E5A71C2BE4F400020202 /* ThenTests */,
 				0340E59A1C2BE4F400020202 /* Products */,
 			);
@@ -68,16 +79,6 @@
 				0340E5A31C2BE4F400020202 /* ThenTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0340E59B1C2BE4F400020202 /* Then */ = {
-			isa = PBXGroup;
-			children = (
-				0340E59C1C2BE4F400020202 /* Then.h */,
-				0340E5B31C2BE5E200020202 /* Then.swift */,
-				0340E59E1C2BE4F400020202 /* Info.plist */,
-			);
-			path = Then;
 			sourceTree = "<group>";
 		};
 		0340E5A71C2BE4F400020202 /* ThenTests */ = {
@@ -96,7 +97,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0340E59D1C2BE4F400020202 /* Then.h in Headers */,
+				033909F91C344E6700EDFB89 /* Then.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0340E5B41C2BE5E200020202 /* Then.swift in Sources */,
+				033909FA1C344E6700EDFB89 /* Then.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +318,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Then/Info.plist;
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Then;
@@ -335,7 +336,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Then/Info.plist;
+				INFOPLIST_FILE = Support/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Then;
@@ -383,6 +384,7 @@
 				0340E5AF1C2BE4F400020202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0340E5B01C2BE4F400020202 /* Build configuration list for PBXNativeTarget "ThenTests" */ = {
 			isa = XCConfigurationList;
@@ -391,6 +393,7 @@
 				0340E5B21C2BE4F400020202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
