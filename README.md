@@ -94,7 +94,7 @@ Installation
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
-    github "devxoul/Then"
+    github "devxoul/Then" ~> 0.1
     ```
 
 - **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
