@@ -85,22 +85,22 @@ final class MyViewController: UIViewController {
 Installation
 ------------
 
-- **For iOS 8+ projects:** Use [CocoaPods](https://cocoapods.org) with Podfile:
+- **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
     pod 'Then', '~> 0.1'
     ```
-
-
-- **For iOS 7 projects:** Use [CocoaSeeds](https://github.com/devxoul/CocoaSeeds) with Seedfile:
-
-    ```ruby
-    github 'devxoul/Then', '0.1.0', :files => 'Then/Then.swift'
-    ```
-- Use [Carthage](https://github.com/Carthage/Carthage) with Cartfile:
+    
+- **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
     github "devxoul/Then"
+    ```
+
+- **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
+
+    ```ruby
+    github 'devxoul/Then', '0.1.0', :files => 'Then/Then.swift'
     ```
 
 License
