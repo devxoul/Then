@@ -4,6 +4,7 @@ Then
 ![Swift](https://img.shields.io/badge/Swift-2.1-orange.svg)
 [![Build Status](https://travis-ci.org/devxoul/Then.svg)](https://travis-ci.org/devxoul/Then)
 [![CocoaPods](http://img.shields.io/cocoapods/v/Then.svg)](https://cocoapods.org/pods/Then)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ✨ Super sweet syntactic sugar for Swift initializers.
 
@@ -84,19 +85,23 @@ final class MyViewController: UIViewController {
 Installation
 ------------
 
-- **For iOS 8+ projects:** Use [CocoaPods](https://cocoapods.org) with Podfile:
+- **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
     pod 'Then', '~> 0.2'
     ```
+    
+- **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
+    ```
+    github "devxoul/Then" ~> 0.1
+    ```
 
-- **For iOS 7 projects:** Use [CocoaSeeds](https://github.com/devxoul/CocoaSeeds) with Seedfile:
+- **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
 
     ```ruby
     github 'devxoul/Then', '0.2.0', :files => 'Then/Then.swift'
     ```
-
 
 License
 -------
