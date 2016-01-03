@@ -56,7 +56,7 @@ let instance = MyClass().then {
 Real World Example
 ------------------
 
-Here's an exmaple usage in an UIViewController subclass.
+Here's an example usage in an UIViewController subclass.
 
 ```swift
 final class MyViewController: UIViewController {
@@ -65,13 +65,13 @@ final class MyViewController: UIViewController {
         $0.textColor = .blackColor()
         $0.textAlignment = .Center
     }
-    
+
     let tableView = UITableView().then {
         $0.backgroundColor = .clearColor()
         $0.separatorStyle = .None
         $0.registerClass(MyCell.self, forCellReuseIdentifier: "myCell")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.titleLabel)
@@ -90,7 +90,7 @@ Installation
     ```ruby
     pod 'Then', '~> 0.3'
     ```
-    
+
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
@@ -102,7 +102,7 @@ Installation
     ```ruby
     github 'devxoul/Then', '0.3.1', :files => 'Sources/*.swift'
     ```
-    
+
 - **Using [Swift Package Manager](https://swift.org/package-manager)**:
 
     ```swift
