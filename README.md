@@ -22,7 +22,7 @@ let label = UILabel().then {
 }
 ```
 
-This is equivalent with:
+This is equivalent to:
 
 ```swift
 let label: UILabel = {
