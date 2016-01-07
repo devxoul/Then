@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C43F90D61C3C2941008185BF"
-               BuildableName = "ThenTVOS.framework"
+               BuildableName = "Then.framework"
                BlueprintName = "ThenTVOS"
                ReferencedContainer = "container:Then.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C43F90D61C3C2941008185BF"
-            BuildableName = "ThenTVOS.framework"
+            BuildableName = "Then.framework"
             BlueprintName = "ThenTVOS"
             ReferencedContainer = "container:Then.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C43F90D61C3C2941008185BF"
-            BuildableName = "ThenTVOS.framework"
+            BuildableName = "Then.framework"
             BlueprintName = "ThenTVOS"
             ReferencedContainer = "container:Then.xcodeproj">
          </BuildableReference>
