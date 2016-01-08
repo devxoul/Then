@@ -37,6 +37,19 @@ extension Then {
         return self
     }
     
+    /// Makes it available to set properties with closures just after initializing, when condition is met.
+    ///
+    ///     let label = UILabel().when(true) {
+    ///         $0.textAlignment = .Center
+    ///         $0.textColor = UIColor.blackColor()
+    ///         $0.text = "Hello, World!"
+    ///     }
+    public func when(execute : Bool, @noescape _ block: Self -> Void) -> Self {
+        if execute {
+            block(self)
+        }
+        return self
+    }
 }
 
 extension NSObject: Then {}
