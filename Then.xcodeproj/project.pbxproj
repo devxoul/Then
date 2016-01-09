@@ -11,6 +11,10 @@
 		033909FA1C344E6700EDFB89 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033909F81C344E6700EDFB89 /* Then.swift */; };
 		0340E5A41C2BE4F400020202 /* Then.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0340E5991C2BE4F400020202 /* Then.framework */; };
 		0340E5A91C2BE4F400020202 /* ThenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0340E5A81C2BE4F400020202 /* ThenTests.swift */; };
+		C42EBD671C3F231000F5066F /* Then.h in Headers */ = {isa = PBXBuildFile; fileRef = 033909F71C344E6700EDFB89 /* Then.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C42EBD681C3F231000F5066F /* Then.h in Headers */ = {isa = PBXBuildFile; fileRef = 033909F71C344E6700EDFB89 /* Then.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C43F90D11C3C289B008185BF /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033909F81C344E6700EDFB89 /* Then.swift */; };
+		C43F90DF1C3C2953008185BF /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033909F81C344E6700EDFB89 /* Then.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,13 +28,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		033909F51C344E4200EDFB89 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Support/Info.plist; sourceTree = SOURCE_ROOT; };
+		033909F51C344E4200EDFB89 /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "Support/Info-iOS.plist"; sourceTree = SOURCE_ROOT; };
 		033909F71C344E6700EDFB89 /* Then.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Then.h; sourceTree = "<group>"; };
 		033909F81C344E6700EDFB89 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		0340E5991C2BE4F400020202 /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0340E5A31C2BE4F400020202 /* ThenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0340E5A81C2BE4F400020202 /* ThenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThenTests.swift; sourceTree = "<group>"; };
 		0340E5AA1C2BE4F400020202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C42EBD6B1C3F236600F5066F /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
+		C42EBD6C1C3F237000F5066F /* Info-tvOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-tvOS.plist"; sourceTree = "<group>"; };
+		C43F90C91C3C288D008185BF /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43F90D71C3C2941008185BF /* Then.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Then.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +57,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C43F90C51C3C288D008185BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F90D31C3C2941008185BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,7 +79,7 @@
 			children = (
 				033909F71C344E6700EDFB89 /* Then.h */,
 				033909F81C344E6700EDFB89 /* Then.swift */,
-				033909F51C344E4200EDFB89 /* Info.plist */,
+				C42EBD6A1C3F235100F5066F /* Supporting Files */,
 			);
 			name = Then;
 			path = Sources;
@@ -77,6 +99,8 @@
 			children = (
 				0340E5991C2BE4F400020202 /* Then.framework */,
 				0340E5A31C2BE4F400020202 /* ThenTests.xctest */,
+				C43F90C91C3C288D008185BF /* Then.framework */,
+				C43F90D71C3C2941008185BF /* Then.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +114,16 @@
 			path = ThenTests;
 			sourceTree = "<group>";
 		};
+		C42EBD6A1C3F235100F5066F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				033909F51C344E4200EDFB89 /* Info-iOS.plist */,
+				C42EBD6B1C3F236600F5066F /* Info-OSX.plist */,
+				C42EBD6C1C3F237000F5066F /* Info-tvOS.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -98,6 +132,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				033909F91C344E6700EDFB89 /* Then.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F90C61C3C288D008185BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C42EBD671C3F231000F5066F /* Then.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F90D41C3C2941008185BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C42EBD681C3F231000F5066F /* Then.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +190,42 @@
 			productReference = 0340E5A31C2BE4F400020202 /* ThenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C43F90C81C3C288D008185BF /* ThenOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43F90D01C3C288D008185BF /* Build configuration list for PBXNativeTarget "ThenOSX" */;
+			buildPhases = (
+				C43F90C41C3C288D008185BF /* Sources */,
+				C43F90C51C3C288D008185BF /* Frameworks */,
+				C43F90C61C3C288D008185BF /* Headers */,
+				C43F90C71C3C288D008185BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThenOSX;
+			productName = ThenOSX;
+			productReference = C43F90C91C3C288D008185BF /* Then.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C43F90D61C3C2941008185BF /* ThenTVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43F90DC1C3C2941008185BF /* Build configuration list for PBXNativeTarget "ThenTVOS" */;
+			buildPhases = (
+				C43F90D21C3C2941008185BF /* Sources */,
+				C43F90D31C3C2941008185BF /* Frameworks */,
+				C43F90D41C3C2941008185BF /* Headers */,
+				C43F90D51C3C2941008185BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThenTVOS;
+			productName = ThenTVOS;
+			productReference = C43F90D71C3C2941008185BF /* Then.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -155,6 +241,13 @@
 					};
 					0340E5A21C2BE4F400020202 = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					C43F90C81C3C288D008185BF = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					C43F90D61C3C2941008185BF = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = GGU39CDBL2;
 					};
 				};
 			};
@@ -172,6 +265,8 @@
 			targets = (
 				0340E5981C2BE4F400020202 /* Then */,
 				0340E5A21C2BE4F400020202 /* ThenTests */,
+				C43F90C81C3C288D008185BF /* ThenOSX */,
+				C43F90D61C3C2941008185BF /* ThenTVOS */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +280,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0340E5A11C2BE4F400020202 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F90C71C3C288D008185BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F90D51C3C2941008185BF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -207,6 +316,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				0340E5A91C2BE4F400020202 /* ThenTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F90C41C3C288D008185BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43F90D11C3C289B008185BF /* Then.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C43F90D21C3C2941008185BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43F90DF1C3C2953008185BF /* Then.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +443,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Support/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Support/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -337,7 +462,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Support/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Support/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -367,6 +492,86 @@
 			};
 			name = Release;
 		};
+		C43F90CE1C3C288D008185BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-OSX.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Then;
+				PRODUCT_NAME = Then;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C43F90CF1C3C288D008185BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-OSX.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Then;
+				PRODUCT_NAME = Then;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C43F90DD1C3C2941008185BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Then;
+				PRODUCT_NAME = Then;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		C43F90DE1C3C2941008185BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info-tvOS.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.xoul.Then;
+				PRODUCT_NAME = Then;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -393,6 +598,24 @@
 			buildConfigurations = (
 				0340E5B11C2BE4F400020202 /* Debug */,
 				0340E5B21C2BE4F400020202 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C43F90D01C3C288D008185BF /* Build configuration list for PBXNativeTarget "ThenOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43F90CE1C3C288D008185BF /* Debug */,
+				C43F90CF1C3C288D008185BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C43F90DC1C3C2941008185BF /* Build configuration list for PBXNativeTarget "ThenTVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43F90DD1C3C2941008185BF /* Debug */,
+				C43F90DE1C3C2941008185BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
