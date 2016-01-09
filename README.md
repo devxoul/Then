@@ -39,15 +39,18 @@ You can use `then()` to all of `NSObject` subclasses.
 ```swift
 let queue = NSOperationQueue().then {
     $0.maxConcurrentOperationCount = 1
+    return
 }
 ```
 
-Want to use with your own classes? Just make extensions.
+> **Why `return`?** See [Trouble Shooting](#trouble-shooting).
+
+Want to use with your own types? Just make extensions.
 
 ```swift
-extension MyClass: Then {}
+extension MyType: Then {}
 
-let instance = MyClass().then {
+let instance = MyType().then {
     $0.really = "awesome!"
 }
 ```
@@ -115,6 +118,32 @@ Installation
         ]
     )
     ```
+    
+    
+Trouble Shooting
+----------------
+
+- **Compile error with only one parameter**
+
+    Using `then()` with only one parameter causes compile error.
+    
+    ```swift
+    let queue = NSOperationQueue().then {
+        $0.maxConcurrentOperationCount = 1 // Compile Error!
+    }
+    ```
+        
+    > Cannot convert value of type '_ -> ()' to expected argument type 'inout NSOperationQueue -> Void'
+        
+    **Possible workaround**: Just return.
+    
+    ```swift
+    let queue = NSOperationQueue().then {
+        $0.maxConcurrentOperationCount = 1
+        return // put this line
+    }
+    ```
+
 
 License
 -------
