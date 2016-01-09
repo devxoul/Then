@@ -32,11 +32,12 @@ extension Then {
     ///         $0.textColor = UIColor.blackColor()
     ///         $0.text = "Hello, World!"
     ///     }
-    public func then(@noescape block: Self -> Void) -> Self {
-        block(self)
-        return self
+    public func then(@noescape block: inout Self -> Void) -> Self {
+        var copy = self
+        block(&copy)
+        return copy
     }
-    
+
 }
 
 extension NSObject: Then {}
