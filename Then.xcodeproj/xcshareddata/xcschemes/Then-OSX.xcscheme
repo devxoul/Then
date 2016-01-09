@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C43F90C81C3C288D008185BF"
                BuildableName = "Then.framework"
-               BlueprintName = "ThenOSX"
+               BlueprintName = "Then-OSX"
                ReferencedContainer = "container:Then.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "03545BCF1C417B7A00F4D3B9"
+               BuildableName = "Then-OSX-Tests.xctest"
+               BlueprintName = "Then-OSX-Tests"
+               ReferencedContainer = "container:Then.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "C43F90C81C3C288D008185BF"
+            BuildableName = "Then.framework"
+            BlueprintName = "Then-OSX"
+            ReferencedContainer = "container:Then.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -47,7 +66,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C43F90C81C3C288D008185BF"
             BuildableName = "Then.framework"
-            BlueprintName = "ThenOSX"
+            BlueprintName = "Then-OSX"
             ReferencedContainer = "container:Then.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +84,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C43F90C81C3C288D008185BF"
             BuildableName = "Then.framework"
-            BlueprintName = "ThenOSX"
+            BlueprintName = "Then-OSX"
             ReferencedContainer = "container:Then.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

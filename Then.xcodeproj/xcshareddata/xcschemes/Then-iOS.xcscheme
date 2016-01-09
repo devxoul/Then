@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C43F90D61C3C2941008185BF"
+               BlueprintIdentifier = "0340E5981C2BE4F400020202"
                BuildableName = "Then.framework"
-               BlueprintName = "ThenTVOS"
+               BlueprintName = "Then-iOS"
                ReferencedContainer = "container:Then.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0340E5A21C2BE4F400020202"
+               BuildableName = "Then-iOS-Tests.xctest"
+               BlueprintName = "Then-iOS-Tests"
+               ReferencedContainer = "container:Then.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0340E5981C2BE4F400020202"
+            BuildableName = "Then.framework"
+            BlueprintName = "Then-iOS"
+            ReferencedContainer = "container:Then.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C43F90D61C3C2941008185BF"
+            BlueprintIdentifier = "0340E5981C2BE4F400020202"
             BuildableName = "Then.framework"
-            BlueprintName = "ThenTVOS"
+            BlueprintName = "Then-iOS"
             ReferencedContainer = "container:Then.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C43F90D61C3C2941008185BF"
+            BlueprintIdentifier = "0340E5981C2BE4F400020202"
             BuildableName = "Then.framework"
-            BlueprintName = "ThenTVOS"
+            BlueprintName = "Then-iOS"
             ReferencedContainer = "container:Then.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
