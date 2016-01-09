@@ -18,12 +18,12 @@ extension User: Then {}
 class ThenTests: XCTestCase {
 
     func testThen_object() {
-        let label = UILabel().then {
-            $0.text = "I am a label."
-            $0.textColor = .blackColor()
+        let queue = NSOperationQueue().then {
+            $0.name = "awesome"
+            $0.maxConcurrentOperationCount = 5
         }
-        XCTAssertEqual(label.text, "I am a label.")
-        XCTAssertEqual(label.textColor, UIColor.blackColor())
+        XCTAssertEqual(queue.name, "awesome")
+        XCTAssertEqual(queue.maxConcurrentOperationCount, 5)
     }
 
     func testThen_value() {
