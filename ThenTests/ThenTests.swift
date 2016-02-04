@@ -34,5 +34,20 @@ class ThenTests: XCTestCase {
         XCTAssertEqual(user.name, "devxoul")
         XCTAssertEqual(user.email, "devxoul@gmail.com")
     }
+    
+    func testThenCanBeCalledOnWrappedOptional() {
+        let intValue : Int? = 5
+        
+        intValue.then {
+            XCTAssertEqual($0, 5)
+        }
+    }
+    
+    func testThenWillNotBeCalledOnNilOptional() {
+        let intValue : Int? = nil
+        intValue.then { _ in
+            XCTFail()
+        }
+    }
 
 }
