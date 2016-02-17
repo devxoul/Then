@@ -123,23 +123,21 @@ Installation
 Trouble Shooting
 ----------------
 
-- **Compile error with only one parameter**
+- **Compile error with single line closure on value types**
 
-    Using `then()` with only one parameter causes compile error.
-    
     ```swift
-    let queue = NSOperationQueue().then {
-        $0.maxConcurrentOperationCount = 1 // Compile Error!
-    }
+    let value = MyStruct().then {
+        $0.isThenAwesome = true
+    } // Compile Error!
     ```
-        
-    > Cannot convert value of type '_ -> ()' to expected argument type 'inout NSOperationQueue -> Void'
-        
-    **Possible workaround**: Just return.
+
+    > error: Cannot convert value of type '_ -> ()' to expected argument type 'inout MyStruct -> Void'
+
+    A possible workaround is: Just add return statement.
     
     ```swift
-    let queue = NSOperationQueue().then {
-        $0.maxConcurrentOperationCount = 1
+    let value = MyStruct().then {
+        $0.isThenAwesome = true
         return // put this line
     }
     ```
