@@ -39,11 +39,8 @@ You can use `then()` to all of `NSObject` subclasses.
 ```swift
 let queue = NSOperationQueue().then {
     $0.maxConcurrentOperationCount = 1
-    return
 }
 ```
-
-> **Why `return`?** See [Trouble Shooting](#trouble-shooting).
 
 Want to use with your own types? Just make extensions.
 
@@ -52,8 +49,11 @@ extension MyType: Then {}
 
 let instance = MyType().then {
     $0.really = "awesome!"
+    return
 }
 ```
+
+> **Why `return`?** See [Trouble Shooting](#trouble-shooting).
 
 
 Real World Example
@@ -125,15 +125,19 @@ Trouble Shooting
 
 - **Compile error with single line closure on value types**
 
+    When using a single line closure on value types such as structs or enums:
+
     ```swift
     let value = MyStruct().then {
         $0.isThenAwesome = true
     } // Compile Error!
     ```
 
+    Then Swift compiler says:
+
     > error: Cannot convert value of type '_ -> ()' to expected argument type 'inout MyStruct -> Void'
 
-    A possible workaround is: Just add return statement.
+    A possible workaround is: add return statement.
     
     ```swift
     let value = MyStruct().then {
