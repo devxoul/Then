@@ -49,11 +49,8 @@ extension MyType: Then {}
 
 let instance = MyType().then {
     $0.really = "awesome!"
-    return
 }
 ```
-
-> **Why `return`?** See [Trouble Shooting](#trouble-shooting).
 
 
 Real World Example
@@ -117,33 +114,6 @@ Installation
             .Package(url: "https://github.com/devxoul/Then", "1.0.1"),
         ]
     )
-    ```
-    
-    
-Trouble Shooting
-----------------
-
-- **Compile error with single line closure on value types**
-
-    When using a single line closure on value types such as structs or enums:
-
-    ```swift
-    let value = MyStruct().then {
-        $0.isThenAwesome = true
-    } // Compile Error!
-    ```
-
-    Then Swift compiler says:
-
-    > error: Cannot convert value of type '_ -> ()' to expected argument type 'inout MyStruct -> Void'
-
-    A possible workaround is: add return statement.
-    
-    ```swift
-    let value = MyStruct().then {
-        $0.isThenAwesome = true
-        return // put this line
-    }
     ```
 
 
