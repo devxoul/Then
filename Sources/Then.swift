@@ -24,9 +24,9 @@ import Foundation
 
 public protocol Then {}
 
-extension Then where Self: Any {
+extension Then {
 
-    /// Makes it available to set properties with closures just after initializing.
+    /// Makes it available to set properties with closures.
     ///
     ///     let label = UILabel().then {
     ///         $0.textAlignment = .Center
@@ -39,22 +39,6 @@ extension Then where Self: Any {
         return copy
     }
 
-}
-
-extension Then where Self: AnyObject {
-
-    /// Makes it available to set properties with closures just after initializing.
-    ///
-    ///     let label = UILabel().then {
-    ///         $0.textAlignment = .Center
-    ///         $0.textColor = UIColor.blackColor()
-    ///         $0.text = "Hello, World!"
-    ///     }
-    public func then(@noescape block: Self -> Void) -> Self {
-        block(self)
-        return self
-    }
-    
 }
 
 extension NSObject: Then {}
