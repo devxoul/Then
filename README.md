@@ -34,6 +34,17 @@ let label: UILabel = {
 }()
 ```
 
+or
+
+```swift
+let label: UILabel = {
+    $0.textAlignment = .Center
+    $0.textColor = .blackColor()
+    $0.text = "Hello, World!"
+    return $0
+}(UILabel())
+```
+
 You can use `then()` to all of `NSObject` subclasses.
 
 ```swift
