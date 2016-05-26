@@ -42,3 +42,19 @@ extension Then {
 }
 
 extension NSObject: Then {}
+
+extension Optional
+{
+    /// Ability to call methods on optional values, such as weak self.
+    ///
+    ///     method.doSomethingWithCompletion { [weak self] in 
+    ///         self.then {
+    ///             $0.doSomething() // Notice that $0 is unwrapped 
+    ///         }
+    ///     }
+    public func then(@noescape block: Wrapped -> Void) {
+        if case .Some(let wrapped) = self {
+            block(wrapped)
+        }
+    }
+}
