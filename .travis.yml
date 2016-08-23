@@ -1,5 +1,5 @@
 language: objective-c
 osx_image: xcode8
 script:
-    - xctool -scheme 'Then-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test -parallelize
-    - xctool -scheme 'Then-OSX' test -parallelize
+    - xcodebuild -scheme 'Then-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
+    - xcodebuild -scheme 'Then-OSX' test | xcpretty -c
