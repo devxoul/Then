@@ -28,12 +28,11 @@ extension Then where Self: Any {
 
     /// Makes it available to set properties with closures just after initializing.
     ///
-    ///     let label = UILabel().then {
-    ///         $0.textAlignment = .Center
-    ///         $0.textColor = UIColor.blackColor()
-    ///         $0.text = "Hello, World!"
+    ///     let frame = CGRect().with {
+    ///         $0.origin.x = 10
+    ///         $0.size.width = 100
     ///     }
-    public func then(_ block: (inout Self) -> Void) -> Self {
+    public func with(_ block: (inout Self) -> Void) -> Self {
         var copy = self
         block(&copy)
         return copy
