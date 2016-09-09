@@ -53,7 +53,18 @@ extension Then where Self: AnyObject {
         block(self)
         return self
     }
-    
+
+    /// Makes it available to execute something with closures.
+    ///
+    ///     UserDefaults.standard.do {
+    ///         $0.set("devxoul", forKey: "username")
+    ///         $0.set("devxoul@gmail.com", forKey: "email")
+    ///         $0.synchronize()
+    ///     }
+    public func `do`(_ block: (Self) -> Void) {
+        block(self)
+    }
+
 }
 
 extension NSObject: Then {}
