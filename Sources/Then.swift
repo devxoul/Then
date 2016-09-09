@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 import Foundation
+import CoreGraphics
 
 public protocol Then {}
 
@@ -68,3 +69,8 @@ extension Then where Self: AnyObject {
 }
 
 extension NSObject: Then {}
+
+extension CGPoint: Then {}
+extension CGRect: Then {}
+extension CGSize: Then {}
+extension CGVector: Then {}
