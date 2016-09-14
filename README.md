@@ -1,7 +1,7 @@
 Then
 ====
 
-![Swift](https://img.shields.io/badge/Swift-2.2-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
 [![Build Status](https://travis-ci.org/devxoul/Then.svg?branch=master)](https://travis-ci.org/devxoul/Then)
 [![CocoaPods](http://img.shields.io/cocoapods/v/Then.svg)](https://cocoapods.org/pods/Then)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -16,9 +16,9 @@ Initialize UILabel **then** set its properties.
 
 ```swift
 let label = UILabel().then {
-    $0.textAlignment = .Center
-    $0.textColor = .blackColor()
-    $0.text = "Hello, World!"
+  $0.textAlignment = .Center
+  $0.textColor = .blackColor()
+  $0.text = "Hello, World!"
 }
 ```
 
@@ -26,31 +26,56 @@ This is equivalent to:
 
 ```swift
 let label: UILabel = {
-    let label = UILabel()
-    label.textAlignment = .Center
-    label.textColor = .blackColor()
-    label.text = "Hello, World!"
-    return label
+  let label = UILabel()
+  label.textAlignment = .Center
+  label.textColor = .blackColor()
+  label.text = "Hello, World!"
+  return label
 }()
 ```
 
-You can use `then()` to all of `NSObject` subclasses.
 
-```swift
-let queue = NSOperationQueue().then {
-    $0.maxConcurrentOperationCount = 1
-}
-```
+Tips and Tricks
+---------------
 
-Want to use with your own types? Just make extensions.
+- You can use `then()` to all of `NSObject` subclasses.
 
-```swift
-extension MyType: Then {}
+    ```swift
+    let queue = OperationQueue().then {
+      $0.maxConcurrentOperationCount = 1
+    }
+    ```
 
-let instance = MyType().then {
-    $0.really = "awesome!"
-}
-```
+- Want to use with your own types? Just make extensions.
+
+    ```swift
+    extension MyType: Then {}
+    
+    let instance = MyType().then {
+      $0.really = "awesome!"
+    }
+    ```
+
+- Use `with()` when copying the value types.
+
+    ```swift
+    let newFrame = oldFrame.with {
+      $0.size.width = 200
+      $0.size.height = 100
+    }
+    newFrame.width // 200
+    newFrame.height // 100
+    ```
+
+- Use `do()` to do something with less typing.
+
+    ```swift
+    UserDefaults.standard.do {
+      $0.set("devxoul", forKey: "username")
+      $0.set("devxoul@gmail.com", forKey: "email")
+      $0.synchronize()
+    }
+    ```
 
 
 Real World Example
@@ -62,20 +87,20 @@ Here's an example usage in an UIViewController subclass.
 final class MyViewController: UIViewController {
 
     let titleLabel = UILabel().then {
-        $0.textColor = .blackColor()
-        $0.textAlignment = .Center
+      $0.textColor = .black
+      $0.textAlignment = .center
     }
 
     let tableView = UITableView().then {
-        $0.backgroundColor = .clearColor()
-        $0.separatorStyle = .None
-        $0.registerClass(MyCell.self, forCellReuseIdentifier: "myCell")
+      $0.backgroundColor = .clear
+      $0.separatorStyle = .none
+      $0.register(MyCell.self, forCellReuseIdentifier: "myCell")
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.addSubview(self.titleLabel)
-        self.view.addSubview(self.tableView)
+      super.viewDidLoad()
+      self.view.addSubview(self.titleLabel)
+      self.view.addSubview(self.tableView)
     }
 
 }
@@ -109,10 +134,10 @@ Installation
     import PackageDescription
 
     let package = Package(
-        name: "MyAwesomeApp",
-        dependencies: [
-            .Package(url: "https://github.com/devxoul/Then", "1.0.3"),
-        ]
+      name: "MyAwesomeApp",
+      dependencies: [
+        .Package(url: "https://github.com/devxoul/Then", "1.0.3"),
+      ]
     )
     ```
 
