@@ -16,8 +16,8 @@ Initialize UILabel **then** set its properties.
 
 ```swift
 let label = UILabel().then {
-  $0.textAlignment = .Center
-  $0.textColor = .blackColor()
+  $0.textAlignment = .center
+  $0.textColor = .black
   $0.text = "Hello, World!"
 }
 ```
@@ -27,8 +27,8 @@ This is equivalent to:
 ```swift
 let label: UILabel = {
   let label = UILabel()
-  label.textAlignment = .Center
-  label.textColor = .blackColor()
+  label.textAlignment = .center
+  label.textColor = .black
   label.text = "Hello, World!"
   return label
 }()
@@ -86,22 +86,22 @@ Here's an example usage in an UIViewController subclass.
 ```swift
 final class MyViewController: UIViewController {
 
-    let titleLabel = UILabel().then {
-      $0.textColor = .black
-      $0.textAlignment = .center
-    }
+  let titleLabel = UILabel().then {
+    $0.textColor = .black
+    $0.textAlignment = .center
+  }
 
-    let tableView = UITableView().then {
-      $0.backgroundColor = .clear
-      $0.separatorStyle = .none
-      $0.register(MyCell.self, forCellReuseIdentifier: "myCell")
-    }
+  let tableView = UITableView().then {
+    $0.backgroundColor = .clear
+    $0.separatorStyle = .none
+    $0.register(MyCell.self, forCellReuseIdentifier: "myCell")
+  }
 
-    override func viewDidLoad() {
-      super.viewDidLoad()
-      self.view.addSubview(self.titleLabel)
-      self.view.addSubview(self.tableView)
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.view.addSubview(self.titleLabel)
+    self.view.addSubview(self.tableView)
+  }
 
 }
 ```
@@ -113,19 +113,19 @@ Installation
 - **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
 
     ```ruby
-    pod 'Then', '~> 1.0'
+    pod 'Then', '~> 2.0'
     ```
 
 - **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
 
     ```
-    github "devxoul/Then" ~> 1.0
+    github "devxoul/Then" ~> 2.0
     ```
 
 - **For iOS 7 projects** with [CocoaSeeds](https://github.com/devxoul/CocoaSeeds):
 
     ```ruby
-    github 'devxoul/Then', '1.0.3', :files => 'Sources/*.swift'
+    github 'devxoul/Then', '2.0.0', :files => 'Sources/*.swift'
     ```
 
 - **Using [Swift Package Manager](https://swift.org/package-manager)**:
@@ -136,7 +136,7 @@ Installation
     let package = Package(
       name: "MyAwesomeApp",
       dependencies: [
-        .Package(url: "https://github.com/devxoul/Then", "1.0.3"),
+        .Package(url: "https://github.com/devxoul/Then", "2.0.0"),
       ]
     )
     ```
