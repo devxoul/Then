@@ -39,6 +39,17 @@ extension Then where Self: Any {
     return copy
   }
 
+  /// Makes it available to execute something with closures.
+  ///
+  ///     UserDefaults.standard.do {
+  ///       $0.set("devxoul", forKey: "username")
+  ///       $0.set("devxoul@gmail.com", forKey: "email")
+  ///       $0.synchronize()
+  ///     }
+  public func `do`(_ block: (Self) -> Void) {
+    block(self)
+  }
+
 }
 
 extension Then where Self: AnyObject {
@@ -53,17 +64,6 @@ extension Then where Self: AnyObject {
   public func then(_ block: (Self) -> Void) -> Self {
     block(self)
     return self
-  }
-
-  /// Makes it available to execute something with closures.
-  ///
-  ///     UserDefaults.standard.do {
-  ///       $0.set("devxoul", forKey: "username")
-  ///       $0.set("devxoul@gmail.com", forKey: "email")
-  ///       $0.synchronize()
-  ///     }
-  public func `do`(_ block: (Self) -> Void) {
-    block(self)
   }
 
 }
