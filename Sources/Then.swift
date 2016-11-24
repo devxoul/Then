@@ -27,7 +27,7 @@ public protocol Then {}
 
 extension Then where Self: Any {
 
-  /// Makes it available to set properties with closures just after initializing.
+  /// Makes it available to set properties with closures just after initializing and copying the value types.
   ///
   ///     let frame = CGRect().with {
   ///       $0.origin.x = 10
