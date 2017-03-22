@@ -33,6 +33,7 @@ extension Then where Self: Any {
   ///       $0.origin.x = 10
   ///       $0.size.width = 100
   ///     }
+  @discardableResult
   public func with(_ block: (inout Self) -> Void) -> Self {
     var copy = self
     block(&copy)
@@ -61,6 +62,7 @@ extension Then where Self: AnyObject {
   ///       $0.textColor = UIColor.blackColor()
   ///       $0.text = "Hello, World!"
   ///     }
+  @discardableResult
   public func then(_ block: (Self) -> Void) -> Self {
     block(self)
     return self
