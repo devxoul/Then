@@ -1,5 +1,9 @@
 language: objective-c
 osx_image: xcode8
+
+before_script:
+  - set -o pipefail
+
 script:
-    - xcodebuild -scheme 'Then-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
-    - xcodebuild -scheme 'Then-OSX' test | xcpretty -c
+  - xcodebuild -scheme 'Then-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
+  - xcodebuild -scheme 'Then-OSX' test | xcpretty -c
