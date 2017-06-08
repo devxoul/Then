@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author           = { "Suyeol Jeon" => "devxoul@gmail.com" }
   s.source           = { :git => "https://github.com/devxoul/Then.git",
                          :tag => s.version.to_s }
-  s.source_files     = "Sources/*.swift"
+  s.source_files     = "Sources/Then/*.swift"
   s.requires_arc     = true
 
   s.ios.deployment_target = "8.0"
