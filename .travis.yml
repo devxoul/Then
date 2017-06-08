@@ -1,9 +1,54 @@
+osx_image: xcode8.3
 language: objective-c
-osx_image: xcode8
+sudo: required
+env:
+  global:
+    - PROJECT="Then.xcodeproj"
+    - SCHEME="Then"
+    - IOS_SDK="iphonesimulator10.3"
+    - MACOS_SDK="macosx10.12"
+    - TVOS_SDK="appletvsimulator10.2"
+    - FRAMEWORK="Then"
+  matrix:
+    - SDK="$IOS_SDK"      DESTINATION="platform=iOS Simulator,name=iPhone 7,OS=10.3.1"
+    - SDK="$MACOS_SDK"    DESTINATION="arch=x86_64"
+    - SDK="$TVOS_SDK"     DESTINATION="OS=10.2,name=Apple TV 1080p"
+
+install:
+  - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
+  - swift --version
 
 before_script:
   - set -o pipefail
+  - TEST=1 swift package generate-xcodeproj
 
 script:
-  - xcodebuild -scheme 'Then-iOS' -sdk iphonesimulator CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO test | xcpretty -c
-  - xcodebuild -scheme 'Then-OSX' test | xcpretty -c
+  - xcodebuild clean build test
+    -project "$PROJECT"
+    -scheme "$SCHEME"
+    -sdk "$SDK"
+    -destination "$DESTINATION"
+    -configuration Debug
+    -enableCodeCoverage YES
+    CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J 'Then'
+
+before_deploy:
+  - ruby ./scripts/carthage_helper.rb prepare_xcconfig
+  - swift package generate-xcodeproj --xcconfig-overrides Config.xcconfig
+  - carthage build --no-skip-current
+  - ruby ./scripts/carthage_helper.rb modify_info
+  - carthage archive Then
+
+deploy:
+  provider: releases
+  api_key:
+    secure: Mg3Ht793cYEBKi/aZF/zhdPLnn76xzUxarA2VyFTYQRlsZ3w5dZLBWMe8afYgZ5mu4hFa/2HDSVa84jC6WWdTGV0JQ86Q1mTRi5Ka18SaZbIZYIvhF5atO9/MQ/xNw0dfiGEZsMBxEk/+BObYuVD40DK35phnfCKqPmPCNEuaRKiBFIkRhwavjgChqbJM4gdrBcO6aJCpGc5iNmjwSEvzGsbY0kB7sWaLRXatGM3REWZEvCGIB4ZoRckKu4UXN6X6uCFdpZ2q3bp4pspE8jT2y8Y8gP/cVsM8zUpMPuG95F0SVJMWTmi1x71/jQbbUkIqV3+bu1SWSOUmhfow7LOP7HW0Vv4Jpm26pWDQdpEk96tZWPvX6xBvqzRdxWEGlHKnM5llMMbKHy7sX4l72NdvoB9MZKyO6I3hjDrXzaqwtqrzWMHMQI8ZVaZenXsm+FZeLjvTBQ+BG9RHJz2wTwJvK8EQJHfd6vM2Fi4SGgKvXAWfrBJh/HDSrGrrrQZWteHMUu0tUzaLRtEnZELhqcHGsCv5VGb1+MDOMW8tp+vNx5pyb+H2QvbYuQaCWsKDu+ghjm4zilWxfdBD4GRvJViZA2Z0mwoOiZmTf4HhzUemv1/4W/SuPnNgVa7D+WqDbAFCQVPAosu1pCUi5mjjzvOBIbvoLvQd5t28YQ+WFzmjMM=
+  file: "$FRAMEWORK.framework.zip"
+  skip_cleanup: true
+  on:
+    repo: devxoul/Then
+    tags: true
+    condition: $SDK = $IOS_SDK
