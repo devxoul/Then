@@ -46,8 +46,8 @@ extension Then where Self: Any {
   ///       $0.set("devxoul@gmail.com", forKey: "email")
   ///       $0.synchronize()
   ///     }
-  public func `do`(_ block: (Self) -> Void) {
-    block(self)
+  public func `do`<T>(_ block: (Self) -> T) -> T {
+    return block(self)
   }
 
 }
