@@ -44,9 +44,8 @@ before_deploy:
 
 deploy:
   provider: releases
-  api_key:
-    secure: Mg3Ht793cYEBKi/aZF/zhdPLnn76xzUxarA2VyFTYQRlsZ3w5dZLBWMe8afYgZ5mu4hFa/2HDSVa84jC6WWdTGV0JQ86Q1mTRi5Ka18SaZbIZYIvhF5atO9/MQ/xNw0dfiGEZsMBxEk/+BObYuVD40DK35phnfCKqPmPCNEuaRKiBFIkRhwavjgChqbJM4gdrBcO6aJCpGc5iNmjwSEvzGsbY0kB7sWaLRXatGM3REWZEvCGIB4ZoRckKu4UXN6X6uCFdpZ2q3bp4pspE8jT2y8Y8gP/cVsM8zUpMPuG95F0SVJMWTmi1x71/jQbbUkIqV3+bu1SWSOUmhfow7LOP7HW0Vv4Jpm26pWDQdpEk96tZWPvX6xBvqzRdxWEGlHKnM5llMMbKHy7sX4l72NdvoB9MZKyO6I3hjDrXzaqwtqrzWMHMQI8ZVaZenXsm+FZeLjvTBQ+BG9RHJz2wTwJvK8EQJHfd6vM2Fi4SGgKvXAWfrBJh/HDSrGrrrQZWteHMUu0tUzaLRtEnZELhqcHGsCv5VGb1+MDOMW8tp+vNx5pyb+H2QvbYuQaCWsKDu+ghjm4zilWxfdBD4GRvJViZA2Z0mwoOiZmTf4HhzUemv1/4W/SuPnNgVa7D+WqDbAFCQVPAosu1pCUi5mjjzvOBIbvoLvQd5t28YQ+WFzmjMM=
-  file: "$FRAMEWORK.framework.zip"
+  api_key: $GITHUB_ACCESS_TOKEN
+  file: $FRAMEWORK.framework.zip
   skip_cleanup: true
   on:
     repo: devxoul/Then
