@@ -36,7 +36,7 @@ extension Then where Self: Any {
   ///       $0.origin.x = 10
   ///       $0.size.width = 100
   ///     }
-  public func with(_ block: (inout Self) -> Void) -> Self {
+  @discardableResult public func with(_ block: (inout Self) -> Void) -> Self {
     var copy = self
     block(&copy)
     return copy
