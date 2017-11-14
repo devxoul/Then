@@ -44,4 +44,12 @@ class ThenTests: XCTestCase {
     XCTAssertEqual(UserDefaults.standard.string(forKey: "username"), "devxoul")
   }
 
+  func testRethrows() {
+    XCTAssertThrowsError(
+      try NSObject().do { _ in
+        throw NSError(domain: "", code: 0)
+      }
+    )
+  }
+
 }
