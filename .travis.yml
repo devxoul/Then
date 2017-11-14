@@ -12,7 +12,7 @@ env:
   matrix:
     - SDK="$IOS_SDK"      DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=11.1"
     - SDK="$MACOS_SDK"    DESTINATION="arch=x86_64"
-    - SDK="$TVOS_SDK"     DESTINATION="OS=11.1,name=Apple TV 1080p"
+    - SDK="$TVOS_SDK"     DESTINATION="OS=11.1,name=Apple TV 4K"
 
 install:
   - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
