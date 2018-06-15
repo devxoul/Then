@@ -35,19 +35,3 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'Then'
-
-before_deploy:
-  - swiftproj generate-xcconfig --podspec Then.podspec
-  - swiftproj generate-xcodeproj --xcconfig-overrides Config.xcconfig
-  - carthage build --no-skip-current
-  - carthage archive Then
-
-deploy:
-  provider: releases
-  api_key: $GITHUB_ACCESS_TOKEN
-  file: $FRAMEWORK.framework.zip
-  skip_cleanup: true
-  on:
-    repo: devxoul/Then
-    tags: true
-    condition: $SDK = $IOS_SDK
