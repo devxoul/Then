@@ -45,7 +45,7 @@ let label: UILabel = {
 
     ```swift
     extension MyType: Then {}
-
+    
     let instance = MyType().then {
       $0.really = "awesome!"
     }
