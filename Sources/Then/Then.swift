@@ -60,8 +60,8 @@ extension Then where Self: AnyObject {
   /// Makes it available to set properties with closures just after initializing.
   ///
   ///     let label = UILabel().then {
-  ///       $0.textAlignment = .Center
-  ///       $0.textColor = UIColor.blackColor()
+  ///       $0.textAlignment = .center
+  ///       $0.textColor = UIColor.black
   ///       $0.text = "Hello, World!"
   ///     }
   public func then(_ block: (Self) throws -> Void) rethrows -> Self {
