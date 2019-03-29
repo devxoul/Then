@@ -1,18 +1,18 @@
-osx_image: xcode10
+osx_image: xcode10.2
 language: objective-c
 sudo: required
 env:
   global:
     - PROJECT="Then.xcodeproj"
     - SCHEME="Then-Package"
-    - IOS_SDK="iphonesimulator12.0"
+    - IOS_SDK="iphonesimulator12.2"
     - MACOS_SDK="macosx10.14"
-    - TVOS_SDK="appletvsimulator12.0"
+    - TVOS_SDK="appletvsimulator12.2"
     - FRAMEWORK="Then"
   matrix:
-    - SDK="$IOS_SDK"      DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=12.0"
+    - SDK="$IOS_SDK"      DESTINATION="platform=iOS Simulator,name=iPhone 8,OS=12.2"
     - SDK="$MACOS_SDK"    DESTINATION="arch=x86_64"
-    - SDK="$TVOS_SDK"     DESTINATION="OS=12.0,name=Apple TV 4K"
+    - SDK="$TVOS_SDK"     DESTINATION="OS=12.2,name=Apple TV 4K"
 
 install:
   - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
