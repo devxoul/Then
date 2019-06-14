@@ -69,6 +69,36 @@ extension Then where Self: AnyObject {
     return self
   }
 
+    /// Makes it available to set properties with closures and returns initialized Value.
+    ///
+    ///     class Test:Builder { // Just make extensions.
+    ///         var value:Bool?
+    ///         var count:Int!
+    ///     }
+    ///     struct TestTwo:Builder {
+    ///         var value:Bool?
+    ///     }
+    ///     // Example how use
+    ///     let testOne:Test = .build { (test) in
+    ///         test.value = true
+    ///         test.count = 10
+    ///     }
+    ///
+    ///     let testTwo:TestTwo = .build {
+    ///         $0.value = false
+    ///         $0.count = 10
+    ///     }
+    ///
+    ///     let testTree = Test.build {
+    ///        $0.value = false
+    ///        $0.count = 10
+    ///     }
+    /// - Returns: initialized Value
+    public static func build(_ block: (inout Self) throws -> Void) rethrows -> Self {
+        var copy = Self.self.init()
+        try block(&copy)
+        return copy
+    }
 }
 
 extension NSObject: Then {}

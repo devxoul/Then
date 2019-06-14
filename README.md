@@ -9,7 +9,7 @@
 
 ## At a Glance
 
-Initialize UILabel **then** set its properties.
+Initialize UILabel **then or build** set its properties.
 
 ```swift
 let label = UILabel().then {
@@ -17,6 +17,13 @@ let label = UILabel().then {
   $0.textColor = .black
   $0.text = "Hello, World!"
 }
+
+let label:UILabel = .build{
+  $0.textAlignment = .center
+  $0.textColor = .black
+  $0.text = "Hello, World!"
+}
+
 ```
 
 This is equivalent to:
