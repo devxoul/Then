@@ -44,6 +44,16 @@ class ThenTests: XCTestCase {
     XCTAssertEqual(UserDefaults.standard.string(forKey: "username"), "devxoul")
   }
 
+  func testLet() {
+    let state: Bool = UserDefaults.standard.let {
+      $0.removeObject(forKey: "username")
+      $0.set("devxoul", forKey: "username")
+      return $0.synchronize()
+    }
+    XCTAssertEqual(state, true)
+  }
+
+
   func testRethrows() {
     XCTAssertThrowsError(
       try NSObject().do { _ in

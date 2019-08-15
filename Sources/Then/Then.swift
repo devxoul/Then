@@ -53,6 +53,19 @@ extension Then where Self: Any {
     try block(self)
   }
 
+
+  /// Makes it available to execute something with closures.
+  ///
+  ///    let synced: Bool = UserDefaults.standard.let {
+  ///       $0.set("devxoul", forKey: "username")
+  ///       $0.set("devxoul@gmail.com", forKey: "email")
+  ///       return $0.synchronize()
+  ///     }
+  public func `let`<T>(_ block:(inout Self) throws -> T) rethrows -> T {
+    var clone = self
+    return try block(&clone)
+  }
+
 }
 
 extension Then where Self: AnyObject {
