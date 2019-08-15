@@ -72,6 +72,16 @@ let label: UILabel = {
     }
     ```
 
+- Use `let()` to do similiar things but return the value you may concern. 
+
+    ```swift
+      let syncStatus = UserDefaults.standard.let {
+        $0.set("devxoul", forKey: "username")
+        $0.set("devxoul@gmail.com", forKey: "email")
+        return $0.synchronize()
+      }
+    ```
+
 ## Real World Example
 
 Here's an example usage in an UIViewController subclass.
