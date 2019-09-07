@@ -47,6 +47,13 @@ class ThenTests: XCTestCase {
     XCTAssertEqual(dict, ["Korea": "Seoul", "Japan": "Tokyo", "China": "Beijing"])
   }
 
+  func testWith_Set() {
+    let set = Set(["A", "B", "C"]).with {
+      $0.insert("D")
+    }
+    XCTAssertEqual(set, Set(["A", "B", "C", "D"]))
+  }
+
   func testDo() {
     UserDefaults.standard.do {
       $0.removeObject(forKey: "username")
