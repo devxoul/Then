@@ -17,7 +17,7 @@ extension User: Then {}
 
 class ThenTests: XCTestCase {
 
-  func testThen() {
+  func testThen_NSObject() {
     let queue = OperationQueue().then {
       $0.name = "awesome"
       $0.maxConcurrentOperationCount = 5
@@ -33,6 +33,18 @@ class ThenTests: XCTestCase {
     }
     XCTAssertEqual(user.name, "devxoul")
     XCTAssertEqual(user.email, "devxoul@gmail.com")
+  }
+
+  func testWith_Array() {
+    let array = [1, 2, 3].with { $0.append(4) }
+    XCTAssertEqual(array, [1, 2, 3, 4])
+  }
+
+  func testWith_Dictionary() {
+    let dict = ["Korea": "Seoul", "Japan": "Tokyo"].with {
+      $0["China"] = "Beijing"
+    }
+    XCTAssertEqual(dict, ["Korea": "Seoul", "Japan": "Tokyo", "China": "Beijing"])
   }
 
   func testDo() {
