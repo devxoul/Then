@@ -3,7 +3,6 @@
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/Then.svg)](https://cocoapods.org/pods/Then)
 [![Build Status](https://travis-ci.org/devxoul/Then.svg?branch=master)](https://travis-ci.org/devxoul/Then)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ✨ Super sweet syntactic sugar for Swift initializers.
 
@@ -101,16 +100,10 @@ final class MyViewController: UIViewController {
 
 ## Installation
 
-- **For iOS 8+ projects** with [CocoaPods](https://cocoapods.org):
+- **Using  [CocoaPods](https://cocoapods.org)**:
 
     ```ruby
     pod 'Then'
-    ```
-
-- **For iOS 8+ projects** with [Carthage](https://github.com/Carthage/Carthage):
-
-    ```
-    github "devxoul/Then"
     ```
 
 - **Using [Swift Package Manager](https://swift.org/package-manager)**:
