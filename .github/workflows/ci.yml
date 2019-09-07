@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        env:
+          - sdk: iphonesimulator12.2
+            destination: platform=iOS Simulator,name=iPhone XS,OS=12.2
+
+          - sdk: macosx10.14
+            destination: arch=x86_64
+
+          - sdk: appletvsimulator12.2
+            destination: OS=12.2,name=Apple TV
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Generate Xcode Project
+      run: swift package generate-xcodeproj --enable-code-coverage
+
+    - name: Build and Test
+      run: |
+        set -o pipefail && xcodebuild clean build test \
+          -project "$PROJECT" \
+          -scheme "$SCHEME" \
+          -sdk "$SDK" \
+          -destination "$DESTINATION" \
+          -configuration Debug \
+          -enableCodeCoverage YES \
+          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+      env:
+        PROJECT: Then.xcodeproj
+        SCHEME: Then-Package
+        SDK: ${{ matrix.env.sdk }}
+        DESTINATION: ${{ matrix.env.destination }}
+
+    - name: Upload Code Coverage
+      run: |
+        bash <(curl -s https://codecov.io/bash) \
+          -X xcodeplist \
+          -J Then \
+          -t f1181cbd-8cec-48a3-bddc-064dcb238eca
