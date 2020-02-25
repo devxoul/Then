@@ -3,8 +3,5 @@ sourcekitten-output.json
 docs/
 /.build
 /Packages
-/*.xcodeproj
-**/xcuserdata
-**/xcshareddata
 Pods/
 Carthage/
