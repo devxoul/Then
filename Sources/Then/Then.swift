@@ -22,7 +22,7 @@
 
 import Foundation
 #if !os(Linux)
-    import CoreGraphics
+  import CoreGraphics
 #endif
 #if os(iOS) || os(tvOS)
   import UIKit.UIGeometry
@@ -79,10 +79,10 @@ extension Then where Self: AnyObject {
 extension NSObject: Then {}
 
 #if !os(Linux)
-    extension CGPoint: Then {}
-    extension CGRect: Then {}
-    extension CGSize: Then {}
-    extension CGVector: Then {}
+  extension CGPoint: Then {}
+  extension CGRect: Then {}
+  extension CGSize: Then {}
+  extension CGVector: Then {}
 #endif
 
 extension Array: Then {}
