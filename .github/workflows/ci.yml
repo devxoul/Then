@@ -2,30 +2,35 @@ name: CI
 
 on:
   push:
-    branches:
-      - master
   pull_request:
 
 jobs:
   test:
     runs-on: macOS-latest
+    env:
+      PROJECT: Then.xcodeproj
+      SCHEME: Then-Package
+      CODECOV_PACKAGE_NAME: Then
     strategy:
       matrix:
         env:
-          - sdk: iphonesimulator12.2
-            destination: platform=iOS Simulator,name=iPhone XS,OS=12.2
+          - sdk: iphonesimulator
+            destination: platform=iOS Simulator,name=iPhone 11 Pro,OS=latest
 
-          - sdk: macosx10.14
+          - sdk: macosx
             destination: arch=x86_64
 
-          - sdk: appletvsimulator12.2
-            destination: OS=12.2,name=Apple TV
+          - sdk: appletvsimulator
+            destination: platform=tvOS Simulator,name=Apple TV,OS=latest
 
     steps:
     - uses: actions/checkout@v1
 
+    - name: List SDKs and Devices
+      run: xcodebuild -showsdks; instruments -s
+
     - name: Generate Xcode Project
-      run: swift package generate-xcodeproj --enable-code-coverage
+      run: swift package generate-xcodeproj
 
     - name: Build and Test
       run: |
@@ -38,8 +43,6 @@ jobs:
           -enableCodeCoverage YES \
           CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c;
       env:
-        PROJECT: Then.xcodeproj
-        SCHEME: Then-Package
         SDK: ${{ matrix.env.sdk }}
         DESTINATION: ${{ matrix.env.destination }}
 
@@ -47,5 +50,6 @@ jobs:
       run: |
         bash <(curl -s https://codecov.io/bash) \
           -X xcodeplist \
-          -J Then \
-          -t f1181cbd-8cec-48a3-bddc-064dcb238eca
+          -J "$CODECOV_PACKAGE_NAME"
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
