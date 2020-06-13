@@ -38,6 +38,7 @@ extension Then where Self: Any {
   ///       $0.origin.x = 10
   ///       $0.size.width = 100
   ///     }
+  @inlinable
   public func with(_ block: (inout Self) throws -> Void) rethrows -> Self {
     var copy = self
     try block(&copy)
@@ -51,6 +52,7 @@ extension Then where Self: Any {
   ///       $0.set("devxoul@gmail.com", forKey: "email")
   ///       $0.synchronize()
   ///     }
+  @inlinable
   public func `do`(_ block: (Self) throws -> Void) rethrows {
     try block(self)
   }
@@ -66,6 +68,7 @@ extension Then where Self: AnyObject {
   ///       $0.textColor = UIColor.black
   ///       $0.text = "Hello, World!"
   ///     }
+  @inlinable
   public func then(_ block: (Self) throws -> Void) rethrows -> Self {
     try block(self)
     return self
