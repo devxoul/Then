@@ -76,6 +76,23 @@ extension Then where Self: AnyObject {
 
 }
 
+extension Then where Self: NSObject {
+
+  
+    /// Makes it available to set properties with closures just after initializing.
+    ///
+    ///     let label = UILabel {
+    ///       $0.textAlignment = .Center
+    ///       $0.textColor = UIColor.blackColor()
+    ///       $0.text = "Hello, World!"
+    ///     }
+    init(block: (Self) -> Void) {
+        self.init()
+        block(self)
+    }
+    
+}
+
 extension NSObject: Then {}
 
 #if !os(Linux)
