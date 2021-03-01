@@ -45,7 +45,7 @@ extension Then where Self: Any {
     return copy
   }
 
-  /// Similar to `with`. `block`is calling  when `statement` returns `true`.
+  /// Similar to `with`. `block` is calling  when `statement` returns `true`.
   ///
   ///     let isSomething = false
   ///     let frame = CGRect().withIf(isSomething) {
@@ -75,7 +75,7 @@ extension Then where Self: Any {
     try block(self)
   }
 
-    /// Similar to `do`. `block`is calling  when `statement` returns `true`.
+  /// Similar to `do`. `block` is calling  when `statement` returns `true`.
   ///
   ///     let isSomething = false
   ///     UserDefaults.standard.doIf(isSomething) {
@@ -106,7 +106,7 @@ extension Then where Self: AnyObject {
     return self
   }
 
-  /// Similar to `then`. `block`is calling  when `statement` returns `true`.
+  /// Similar to `then`. `block` is calling  when `statement` returns `true`.
   ///
   ///     let isSomething = false
   ///     let label = UILabel().thenIf(isSomething) {
