@@ -45,6 +45,24 @@ extension Then where Self: Any {
     return copy
   }
 
+  /// Similar to `with`. `block`is calling  when `statement` returns `true`.
+  ///
+  ///     let isSomething = false
+  ///     let frame = CGRect().withIf(isSomething) {
+  ///       $0.origin.x = 10
+  ///       $0.size.width = 100
+  ///     }
+  @inlinable
+  public func withIf(_ statement: @autoclosure () -> Bool, _ block: (inout Self) throws -> Void) rethrows -> Self {
+    if statement() {
+      var copy = self
+      try block(&copy)
+      return copy
+    } else {
+      return self
+    }
+  }
+    
   /// Makes it available to execute something with closures.
   ///
   ///     UserDefaults.standard.do {
@@ -57,6 +75,20 @@ extension Then where Self: Any {
     try block(self)
   }
 
+    /// Similar to `do`. `block`is calling  when `statement` returns `true`.
+  ///
+  ///     let isSomething = false
+  ///     UserDefaults.standard.doIf(isSomething) {
+  ///       $0.set("devxoul", forKey: "username")
+  ///       $0.set("devxoul@gmail.com", forKey: "email")
+  ///       $0.synchronize()
+  ///     }
+  @inlinable
+  public func doIf(_ statement: @autoclosure () -> Bool, _ block: (Self) throws -> Void) rethrows {
+    if statement() {
+      try block(self)
+    }
+  }
 }
 
 extension Then where Self: AnyObject {
@@ -74,6 +106,21 @@ extension Then where Self: AnyObject {
     return self
   }
 
+  /// Similar to `then`. `block`is calling  when `statement` returns `true`.
+  ///
+  ///     let isSomething = false
+  ///     let label = UILabel().thenIf(isSomething) {
+  ///       $0.textAlignment = .center
+  ///       $0.textColor = UIColor.black
+  ///       $0.text = "Hello, World!"
+  ///     }
+  @inlinable
+  public func thenIf(_ statement: @autoclosure () -> Bool, _ block: (Self) throws -> Void) rethrows -> Self {
+    if statement() {
+      try block(self)
+    }
+    return self
+  }
 }
 
 extension NSObject: Then {}
