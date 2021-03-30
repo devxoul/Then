@@ -9,6 +9,7 @@ let package = Package(
   ],
   products: [
     .library(name: "Then", targets: ["Then"]),
+    .library(name: "Then-Dynamic", type: .dynamic, targets: ["Then"])
   ],
   targets: [
     .target(name: "Then"),
