@@ -88,6 +88,8 @@ extension NSObject: Then {}
 extension Array: Then {}
 extension Dictionary: Then {}
 extension Set: Then {}
+extension JSONDecoder: Then {}
+extension JSONEncoder: Then {}
 
 #if os(iOS) || os(tvOS)
   extension UIEdgeInsets: Then {}
