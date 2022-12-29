@@ -54,13 +54,11 @@ extension Then where Self: Any {
   ///     }
   @inlinable
   public func withIf(_ statement: @autoclosure () -> Bool, _ block: (inout Self) throws -> Void) rethrows -> Self {
+    var copy = self
     if statement() {
-      var copy = self
       try block(&copy)
-      return copy
-    } else {
-      return self
     }
+    return copy
   }
     
   /// Makes it available to execute something with closures.
