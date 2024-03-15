@@ -70,7 +70,15 @@ let label: UILabel = {
       $0.synchronize()
     }
     ```
+    
+- Use `task()` to do something concurrency codes with less typing.
 
+    ```swift
+    myActor.task {
+      await $0.increase()
+    }
+    ```
+    
 ## Real World Example
 
 Here's an example usage in an UIViewController subclass.
