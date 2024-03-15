@@ -15,6 +15,15 @@ struct User {
 }
 extension User: Then {}
 
+actor Counter {
+  var num = 0
+  
+  func increase() { num += 1 }
+  func decrease() { num -= 1 }
+}
+
+extension Counter: Then {}
+
 class ThenTests: XCTestCase {
 
   func testThen_NSObject() {
@@ -61,6 +70,21 @@ class ThenTests: XCTestCase {
       $0.synchronize()
     }
     XCTAssertEqual(UserDefaults.standard.string(forKey: "username"), "devxoul")
+  }
+  
+  func testTask() {
+    let counter = Counter()
+    
+    counter.task {
+      await $0.increase()
+      await $0.increase()
+      await $0.decrease()
+    }
+    
+    Task {
+      let num = await counter.num
+      XCTAssertEqual(1, num)
+    }
   }
 
   func testRethrows() {

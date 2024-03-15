@@ -73,7 +73,20 @@ extension Then where Self: AnyObject {
     try block(self)
     return self
   }
-
+  
+  /// Makes it available to execute asynchronous block with closures
+  ///
+  ///     myActor.task {
+  ///       await $0.increase()
+  ///     }
+  
+  @available(macOS 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  @inlinable
+  public func task(priority: TaskPriority = .userInitiated, _ action: @escaping @Sendable (Self) async -> Void) {
+    Task(priority: priority) {
+      await action(self)
+    }
+  }
 }
 
 extension NSObject: Then {}
