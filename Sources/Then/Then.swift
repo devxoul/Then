@@ -57,6 +57,15 @@ extension Then where Self: Any {
     try block(self)
   }
 
+#if swift(>=5.5) && canImport(_Concurrency)
+  /// Async-friendly version of `.do` that accepts an async-throws closure.
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+  @inlinable
+  public func `do`(_ block: (Self) async throws -> Void) async rethrows {
+    try await block(self)
+  }
+#endif
+
 }
 
 extension Then where Self: AnyObject {
