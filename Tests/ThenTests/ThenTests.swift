@@ -15,6 +15,14 @@ struct User {
 }
 extension User: Then {}
 
+class Timer {
+  func run() async -> Bool {
+    try? await Task.sleep(nanoseconds: 1_000_000_000)
+    return true
+  }
+}
+extension Timer: Then {}
+
 class ThenTests: XCTestCase {
 
   func testThen_NSObject() {
@@ -63,6 +71,14 @@ class ThenTests: XCTestCase {
     XCTAssertEqual(UserDefaults.standard.string(forKey: "username"), "devxoul")
   }
 
+  func testAsyncDo() async {
+    let t = Timer()
+    await t.do {
+      let obj = await $0.run()
+      XCTAssertTrue(obj)
+    }
+  }
+  
   func testRethrows() {
     XCTAssertThrowsError(
       try NSObject().do { _ in
@@ -70,5 +86,4 @@ class ThenTests: XCTestCase {
       }
     )
   }
-
 }
