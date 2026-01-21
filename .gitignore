@@ -8,3 +8,7 @@ docs/
 **/xcshareddata
 Pods/
 Carthage/
+
+# Tuist
+Derived/
+*.xcworkspace
