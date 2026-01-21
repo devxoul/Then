@@ -10,7 +10,6 @@ jobs:
     env:
       PROJECT: Then.xcodeproj
       SCHEME: Then-Package
-      CODECOV_PACKAGE_NAME: Then
     strategy:
       matrix:
         env:
@@ -45,11 +44,3 @@ jobs:
       env:
         SDK: ${{ matrix.env.sdk }}
         DESTINATION: ${{ matrix.env.destination }}
-
-    - name: Upload Code Coverage
-      run: |
-        bash <(curl -s https://codecov.io/bash) \
-          -X xcodeplist \
-          -J "$CODECOV_PACKAGE_NAME"
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
