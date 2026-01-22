@@ -2,45 +2,51 @@ name: CI
 
 on:
   push:
+    branches: [main]
   pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
-    runs-on: macOS-latest
-    env:
-      PROJECT: Then.xcodeproj
-      SCHEME: Then-Package
+    name: Test ${{ matrix.platform }}
+    runs-on: macos-latest
     strategy:
+      fail-fast: false
       matrix:
-        env:
-          - sdk: iphonesimulator
-            destination: platform=iOS Simulator,name=iPhone 11 Pro,OS=latest
-
-          - sdk: macosx
-            destination: arch=x86_64
-
-          - sdk: appletvsimulator
+        include:
+          - platform: iOS
+            scheme: Then-iOS
+            destination: platform=iOS Simulator,name=iPhone 16,OS=latest
+          - platform: macOS
+            scheme: Then-macOS
+            destination: platform=macOS
+          - platform: tvOS
+            scheme: Then-tvOS
             destination: platform=tvOS Simulator,name=Apple TV,OS=latest
+          - platform: watchOS
+            scheme: Then-watchOS
+            destination: platform=watchOS Simulator,name=Apple Watch Series 10 (46mm),OS=latest
 
     steps:
-    - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: List SDKs and Devices
-      run: xcodebuild -showsdks; instruments -s
+      - name: Install Tuist
+        run: brew install tuist
 
-    - name: Generate Xcode Project
-      run: swift package generate-xcodeproj
+      - name: Generate project
+        run: tuist generate --no-open
 
-    - name: Build and Test
-      run: |
-        set -o pipefail && xcodebuild clean build test \
-          -project "$PROJECT" \
-          -scheme "$SCHEME" \
-          -sdk "$SDK" \
-          -destination "$DESTINATION" \
-          -configuration Debug \
-          -enableCodeCoverage YES \
-          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c;
-      env:
-        SDK: ${{ matrix.env.sdk }}
-        DESTINATION: ${{ matrix.env.destination }}
+      - name: Build and Test
+        run: |
+          xcodebuild clean build test \
+            -project Then.xcodeproj \
+            -scheme "${{ matrix.scheme }}" \
+            -destination "${{ matrix.destination }}" \
+            -enableCodeCoverage YES \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO
