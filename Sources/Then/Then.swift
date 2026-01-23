@@ -65,6 +65,7 @@ public extension Then where Self: AnyObject {
   ///       $0.textColor = UIColor.black
   ///       $0.text = "Hello, World!"
   ///     }
+  @discardableResult
   @inlinable
   func then(_ block: (Self) throws -> Void) rethrows -> Self {
     try block(self)
