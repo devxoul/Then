@@ -38,9 +38,11 @@ jobs:
       - name: Install Tuist
         run: brew install tuist
 
-      - name: Install tvOS Simulator
-        if: matrix.platform == 'tvOS'
-        run: xcodebuild -downloadPlatform tvOS
+      - name: Install Simulator Runtime
+        if: matrix.platform == 'tvOS' || matrix.platform == 'watchOS'
+        run: |
+          xcrun simctl list > /dev/null
+          sudo xcodebuild -downloadPlatform ${{ matrix.platform }}
 
       - name: Generate project
         run: tuist generate --no-open
