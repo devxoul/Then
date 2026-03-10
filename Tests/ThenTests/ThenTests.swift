@@ -70,4 +70,38 @@ class ThenTests: XCTestCase {
       },
     )
   }
+
+  @MainActor
+  func testThen_MainActorIsolated() {
+    @MainActor class MyView: NSObject {
+      var title: String = ""
+    }
+    let view = MyView().then {
+      $0.title = "hello"
+    }
+    XCTAssertEqual(view.title, "hello")
+  }
+
+  @MainActor
+  func testWith_MainActorIsolated() {
+    @MainActor struct Config: Then {
+      var value: Int = 0
+    }
+    let config = Config().with {
+      $0.value = 42
+    }
+    XCTAssertEqual(config.value, 42)
+  }
+
+  @MainActor
+  func testDo_MainActorIsolated() {
+    @MainActor class Store: NSObject {
+      var count: Int = 0
+    }
+    let store = Store()
+    store.do {
+      $0.count = 10
+    }
+    XCTAssertEqual(store.count, 10)
+  }
 }
