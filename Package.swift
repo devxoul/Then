@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
   name: "Then",
   platforms: [
-    .macOS(.v11), .iOS(.v11), .tvOS(.v12), .watchOS(.v5)
+    .macOS(.v12), .iOS(.v15), .tvOS(.v15), .watchOS(.v9)
   ],
   products: [
     .library(name: "Then", targets: ["Then"]),
@@ -13,5 +13,5 @@ let package = Package(
   targets: [
     .target(name: "Then", path: "Sources", resources: [.copy("PrivacyInfo.xcprivacy")]),
     .testTarget(name: "ThenTests", dependencies: ["Then"]),
-  ]
+  ],
 )

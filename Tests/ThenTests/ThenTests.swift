@@ -6,17 +6,17 @@
 //  Copyright © 2015 Suyeol Jeon. All rights reserved.
 //
 
-import XCTest
 @testable import Then
+import XCTest
 
 struct User {
   var name: String?
   var email: String?
 }
+
 extension User: Then {}
 
 class ThenTests: XCTestCase {
-
   func testThen_NSObject() {
     let queue = OperationQueue().then {
       $0.name = "awesome"
@@ -67,8 +67,7 @@ class ThenTests: XCTestCase {
     XCTAssertThrowsError(
       try NSObject().do { _ in
         throw NSError(domain: "", code: 0)
-      }
+      },
     )
   }
-
 }
