@@ -13,5 +13,5 @@ let package = Package(
   targets: [
     .target(name: "Then"),
     .testTarget(name: "ThenTests", dependencies: ["Then"]),
-  ],
+  ]
 )
