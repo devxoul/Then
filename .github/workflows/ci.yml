@@ -20,7 +20,7 @@ jobs:
         include:
           - platform: iOS
             scheme: Then-iOS
-            destination: platform=iOS Simulator,name=iPhone 16,OS=latest
+            destination: platform=iOS Simulator,name=iPhone 17,OS=latest
           - platform: macOS
             scheme: Then-macOS
             destination: platform=macOS
@@ -29,7 +29,7 @@ jobs:
             destination: platform=tvOS Simulator,name=Apple TV,OS=latest
           - platform: watchOS
             scheme: Then-watchOS
-            destination: platform=watchOS Simulator,name=Apple Watch Series 10 (46mm),OS=latest
+            destination: platform=watchOS Simulator,name=Apple Watch SE 3 (44mm),OS=latest
 
     steps:
       - name: Checkout
