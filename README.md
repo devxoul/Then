@@ -2,7 +2,7 @@
 
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![CocoaPods](http://img.shields.io/cocoapods/v/Then.svg)](https://cocoapods.org/pods/Then)
-[![Build Status](https://travis-ci.org/devxoul/Then.svg?branch=master)](https://travis-ci.org/devxoul/Then)
+[![CI](https://github.com/devxoul/Then/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/devxoul/Then/actions/workflows/ci.yml)
 
 ✨ Super sweet syntactic sugar for Swift initializers.
 
