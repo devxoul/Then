@@ -67,7 +67,7 @@ class ThenTests: XCTestCase {
     XCTAssertThrowsError(
       try NSObject().do { _ in
         throw NSError(domain: "", code: 0)
-      },
+      }
     )
   }
 }
