@@ -24,7 +24,7 @@ let project = Project(
       headers: .headers(public: "Sources/Then/**/*.h"),
       settings: .settings(
         base: [
-          "SWIFT_VERSION": "5.0",
+          "SWIFT_VERSION": "6.0",
           "PRODUCT_NAME": "Then",
           "PRODUCT_MODULE_NAME": "Then",
         ],
@@ -43,7 +43,7 @@ let project = Project(
       ],
       settings: .settings(
         base: [
-          "SWIFT_VERSION": "5.0",
+          "SWIFT_VERSION": "6.0",
         ],
       ),
     ),
@@ -58,7 +58,7 @@ let project = Project(
       headers: .headers(public: "Sources/Then/**/*.h"),
       settings: .settings(
         base: [
-          "SWIFT_VERSION": "5.0",
+          "SWIFT_VERSION": "6.0",
           "PRODUCT_NAME": "Then",
           "PRODUCT_MODULE_NAME": "Then",
         ],
@@ -77,7 +77,7 @@ let project = Project(
       ],
       settings: .settings(
         base: [
-          "SWIFT_VERSION": "5.0",
+          "SWIFT_VERSION": "6.0",
         ],
       ),
     ),
@@ -92,7 +92,7 @@ let project = Project(
       headers: .headers(public: "Sources/Then/**/*.h"),
       settings: .settings(
         base: [
-          "SWIFT_VERSION": "5.0",
+          "SWIFT_VERSION": "6.0",
           "PRODUCT_NAME": "Then",
           "PRODUCT_MODULE_NAME": "Then",
         ],
@@ -111,7 +111,7 @@ let project = Project(
       ],
       settings: .settings(
         base: [
-          "SWIFT_VERSION": "5.0",
+          "SWIFT_VERSION": "6.0",
         ],
       ),
     ),
@@ -126,7 +126,7 @@ let project = Project(
       headers: .headers(public: "Sources/Then/**/*.h"),
       settings: .settings(
         base: [
-          "SWIFT_VERSION": "5.0",
+          "SWIFT_VERSION": "6.0",
           "PRODUCT_NAME": "Then",
           "PRODUCT_MODULE_NAME": "Then",
         ],
@@ -145,7 +145,7 @@ let project = Project(
       ],
       settings: .settings(
         base: [
-          "SWIFT_VERSION": "5.0",
+          "SWIFT_VERSION": "6.0",
         ],
       ),
     ),
