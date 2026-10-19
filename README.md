@@ -114,7 +114,7 @@ final class MyViewController: UIViewController {
     let package = Package(
       name: "MyAwesomeApp",
       dependencies: [
-        .Package(url: "https://github.com/devxoul/Then", majorVersion: 2),
+        .package(url: "https://github.com/devxoul/Then", .upToNextMajor(from: "3.0.0"))
       ]
     )
     ```
